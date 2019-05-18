@@ -5,11 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExamAutumn_2018"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
     <Window.Resources>
-        
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+        <Style x:Key="tblStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="42"/>
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
     </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="lbxAccountList" Grid.Column="0" Grid.Row="0" Margin="50"/>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Height="44" Margin="37,39,231,0" Width="95">
+            <Label Content="Totals" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Blue" Height="43" Width="85"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="37,83,23,294" Orientation="Horizontal">
+            <Label Content="Current" Width="134"/>
+            <TextBlock x:Name="tblkCurrent" Height="40" Width="169"  />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="37,130,23,244" Orientation="Horizontal">
+            <Label Content="Savings" Width="134"/>
+            <TextBlock x:Name="tblkSavings" Height="40" Width="169"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="37,175,23,198" Orientation="Horizontal">
+            <Label Content="Credit Cards" Width="134"/>
+            <TextBlock x:Name="tblkCreditCArds" Height="40" Width="169"/>
+        </StackPanel>
     </Grid>
 </Window>
